@@ -1,0 +1,64 @@
+================================================================================
+                         DRAGON TREASURE - FACIT
+================================================================================
+
+KARTA
+=====
+
+            [DEAD BODY] ---- E ----> [TORCH] =======> EXIT
+            (monster)                (fackla)
+                 |                       |
+                 N                       S
+                 |                       |
+[OUTSIDE] --E--> [ENTRANCE]          [WET ROOM] =======> TREASURE (LAST)
+ (start)         (ljus)              (fuktigt)
+                 |                       |
+                 S                       W
+                 |                       |
+            [CAVE ROOM] ----- E ---------+
+            (bergrum)
+
+
+KOMMANDON
+=========
+  n = North (norr)
+  s = South (soder)
+  e = East (oster)
+  w = West (vaster)
+
+
+LOSNINGAR
+=========
+
+Till EXIT (vinn spelet):
+------------------------
+  e -> n -> e -> e
+
+  Steg 1: e  (outside -> entrance)
+  Steg 2: n  (entrance -> deadBody)
+  Steg 3: e  (deadBody -> torch)
+  Steg 4: e  (torch -> EXIT)
+
+
+Till TREASURE (last dorr):
+--------------------------
+  e -> s -> e -> e
+
+  Steg 1: e  (outside -> entrance)
+  Steg 2: s  (entrance -> caveRoom)
+  Steg 3: e  (caveRoom -> wetRoom)
+  Steg 4: e  (wetRoom -> TREASURE, last dorr)
+
+
+Alternativ vag till TREASURE:
+-----------------------------
+  e -> n -> e -> s -> e
+
+  Steg 1: e  (outside -> entrance)
+  Steg 2: n  (entrance -> deadBody)
+  Steg 3: e  (deadBody -> torch)
+  Steg 4: s  (torch -> wetRoom)
+  Steg 5: e  (wetRoom -> TREASURE, last dorr)
+
+
+================================================================================
