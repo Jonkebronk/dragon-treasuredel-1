@@ -7,14 +7,14 @@ public class Door {
 
     /**
      * Riktningar som en dörr kan ha.
-     * Varje riktning har ett kommandotecken (n, s, ö, v)
-     * och ett svenskt namn (norr, söder, öster, väster).
+     * Varje riktning har ett kommandotecken (n, s, e, w)
+     * och ett engelskt namn (north, south, east, west).
      */
     public enum Direction {
-        NORTH('n', "norrut"),
-        SOUTH('s', "söderut"),
-        EAST('ö', "österut"),
-        WEST('v', "västerut");
+        NORTH('n', "north"),
+        SOUTH('s', "south"),
+        EAST('e', "east"),
+        WEST('w', "west");
 
         private final char commandChar;  // Tecken spelaren använder
         private final String name;       // Svenskt namn på riktningen
