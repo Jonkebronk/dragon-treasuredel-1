@@ -13,7 +13,7 @@ public class Room {
     //Konstruktor för rummen
     public Room(String roomDesc) {
     this.roomDesc = roomDesc;
-    this.doors = new ArrayList();
+    this.doors = new ArrayList<>();
     }
     
     //Setter för att sätta rummets beskrivning
