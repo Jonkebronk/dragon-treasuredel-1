@@ -2,6 +2,7 @@
  * Representerar en dörr mellan två rum i dungeon-spelet.
  * En dörr har en riktning (north, south, east, west), kan vara låst
  * och leder till ett specifikt rum.
+ * @author Jonas
  */
 public class Door {
 

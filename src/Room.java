@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 /**
- *
+ * Representerar ett rum i dungeon-spelet.
+ * Varje rum har en beskrivning och en lista med dörrar som leder till andra rum.
  * @author Arvid
  */
 public class Room {
