@@ -75,7 +75,6 @@ public class Dungeon {
                 Room nextRoom = door.getNextRoom();
                 if (nextRoom == null) {
                     // Utgång - spelet slutar
-                    printDragon();
                     System.out.println("Du lämnar grottan med livet i behåll. Grattis, du förlorade inte!");
                     playing = false;
                 } else {
@@ -110,42 +109,4 @@ public class Dungeon {
         System.out.println("           '-.||_/.-'");
     }
 
-    /**
-     * Skriver ut ASCII-art av draken
-     */
-    private void printDragon() {
-        System.out.println("                                                  .~))>>");
-        System.out.println("                                                 .~)>>");
-        System.out.println("                                               .~))))>>>");
-        System.out.println("                                             .~))>>             ___");
-        System.out.println("                                           .~))>>)))>>      .-~))>>");
-        System.out.println("                                         .~)))))>>       .-~))>>)>");
-        System.out.println("                                       .~)))>>))))>>  .-~)>>)>");
-        System.out.println("                   )                 .~))>>))))>>  .-~)))))>>)>");
-        System.out.println("                ( )@@*)             //)>))))))  .-~))))>>)>");
-        System.out.println("              ).@(@@               //))>>))) .-~))>>)))))>>)>");
-        System.out.println("            (( @.@).              //))))) .-~)>>)))))>>)>");
-        System.out.println("          ))  )@@*.@@ )          //)>))) //))))))>>))))>>)>");
-        System.out.println("       ((  ((@@@.@@             |/))))) //)))))>>)))>>)>");
-        System.out.println("      )) @@*. )@@ )   (\\_(\\-\\b  |))>)) //)))>>)))))))>>)>");
-        System.out.println("    (( @@@(.@(@ .    _/`-`  ~|b |>))) //)>>)))))))>>)>");
-        System.out.println("     )* @@@ )@*     (@)  (@) /\\b|))) //))))))>>))))>>");
-        System.out.println("   (( @. )@( @ .   _/  /    /  \\b)) //))>>)))))>>>_._");
-        System.out.println("    )@@ (@@*)@@.  (6///6)- / ^  \\b)//))))))>>)))>>   ~~-.");
-        System.out.println(" ( @jgs@@. @@@.*@_ VvvvvV//  ^  \\b/)>>))))>>      _.     `bb");
-        System.out.println(" ((@@ @@@*.(@@ . - | o |' \\ (  ^   \\b)))>>        .'       b`,");
-        System.out.println("   ((@@).*@@ )@ )   \\^^^/  ((   ^  ~)_        \\  /           b `,");
-        System.out.println("     (@@. (@@ ).     `-'   (((   ^    `\\ \\ \\ \\ \\|             b  `.");
-        System.out.println("       (*.@*              / ((((        \\| | |  \\       .       b `.");
-        System.out.println("                         / / (((((  \\    \\ /  _.-~\\     Y,      b  ;");
-        System.out.println("                        / / / (((((( \\    \\.-~   _.`\" _.-~`,    b  ;");
-        System.out.println("                       /   /   `(((((()    )    (((((~      `,  b  ;");
-        System.out.println("                     _/  _/      `\"\"\"/   /'                  ; b   ;");
-        System.out.println("                 _.-~_.-~           /  /'                _.'~bb _.'");
-        System.out.println("               ((((~~              / /'              _.'~bb.--~");
-        System.out.println("                                  ((((          __.-~bb.-~");
-        System.out.println("                                              .'  b .~~");
-        System.out.println("                                              :bb ,'");
-        System.out.println("                                              ~~~~");
-    }
 }
