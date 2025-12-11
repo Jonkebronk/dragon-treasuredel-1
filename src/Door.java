@@ -7,23 +7,23 @@ public class Door {
 
     /**
      * Riktningar som en dörr kan ha.
-     * Varje riktning har ett kommandotecken (n, s, e, w)
-     * och ett engelskt namn (north, south, east, west).
+     * Varje riktning har ett kommandotecken (n, s, ö, v)
+     * och ett svenskt namn (norr, söder, öster, väster).
      */
     public enum Direction {
-        NORTH('n', "north"),
-        SOUTH('s', "south"),
-        EAST('e', "east"),
-        WEST('w', "west");
+        NORTH('n', "norrut"),
+        SOUTH('s', "söderut"),
+        EAST('ö', "österut"),
+        WEST('v', "västerut");
 
         private final char commandChar;  // Tecken spelaren använder
-        private final String name;       // Engelskt namn på riktningen
+        private final String name;       // Svenskt namn på riktningen
 
         /**
          * Skapar en riktning med kommandotecken och namn.
          *
-         * @param commandChar tecknet spelaren skriver (n, s, e, w)
-         * @param name det engelska namnet på riktningen
+         * @param commandChar tecknet spelaren skriver (n, s, ö, v)
+         * @param name det svenska namnet på riktningen
          */
         Direction(char commandChar, String name) {
             this.commandChar = commandChar;
@@ -33,16 +33,16 @@ public class Door {
         /**
          * Hämtar kommandotecknet som spelaren ska skriva.
          *
-         * @return kommandotecknet (n, s, e, w)
+         * @return kommandotecknet (n, s, ö, v)
          */
         public char getCommandChar() {
             return commandChar;
         }
 
         /**
-         * Hämtar det engelska namnet på riktningen.
+         * Hämtar det svenska namnet på riktningen.
          *
-         * @return det engelska riktningens namn
+         * @return det svenska riktningens namn
          */
         public String getName() {
             return name;
@@ -51,7 +51,7 @@ public class Door {
         /**
          * Översätter ett tecken till motsvarande riktning.
          *
-         * @param c tecknet spelaren skrev (n, s, e, w)
+         * @param c tecknet spelaren skrev (n, s, ö, v)
          * @return motsvarande Direction
          * @throws IllegalArgumentException om tecknet är ogiltigt
          */
@@ -78,6 +78,17 @@ public class Door {
         this.direction = direction;
         this.locked = locked;
         this.leadsTo = leadsTo;
+    }
+
+    /**
+     * Skapar en ny dörr med riktning angiven som tecken.
+     *
+     * @param directionChar riktning som tecken (n, s, ö, v)
+     * @param locked om dörren är låst
+     * @param leadsTo rummet som dörren leder till
+     */
+    public Door(char directionChar, boolean locked, Room leadsTo) {
+        this(Direction.fromChar(directionChar), locked, leadsTo);
     }
 
     /**
@@ -123,5 +134,43 @@ public class Door {
      */
     public void setLeadsTo(Room leadsTo) {
         this.leadsTo = leadsTo;
+    }
+
+    // === ADAPTER-METODER för kompatibilitet med Room och Dungeon ===
+
+    /**
+     * Hämtar dörrens riktning som tecken (för Room-klassen).
+     *
+     * @return riktningen som tecken (n, s, ö, v)
+     */
+    public char getPosition() {
+        return direction.getCommandChar();
+    }
+
+    /**
+     * Hämtar riktningens namn (för Room-klassen).
+     *
+     * @return riktningens svenska namn
+     */
+    public String getDirectionName() {
+        return direction.getName();
+    }
+
+    /**
+     * Hämtar kommandotecknet (för Room-klassen).
+     *
+     * @return kommandotecknet (n, s, ö, v)
+     */
+    public char getCommandChar() {
+        return direction.getCommandChar();
+    }
+
+    /**
+     * Hämtar nästa rum (alias för getLeadsTo, för Dungeon-klassen).
+     *
+     * @return rummet dörren leder till
+     */
+    public Room getNextRoom() {
+        return leadsTo;
     }
 }
