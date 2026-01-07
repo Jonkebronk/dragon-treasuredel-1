@@ -37,7 +37,8 @@ public class DragonTreasure {
         dungeon.setPlayer(player);
 
         // === SKAPA RUM ===
-        Room outside = new Room("Du står utanför en grotta. Det luktar svavel från öppningen.");
+        Room outside = new Room("Du står utanför en grotta. Det luktar svavel från öppningen.\nGrottöppningen är österut. Skriv \"e\" och tryck på [Enter] för att komma in i grottan");
+        outside.setShowDoors(false); // Instruktionen finns redan i rumsbeskrivningen
         Room entrance = new Room("När du går in i grottan kollapsar ingången bakom dig.\nRummet är upplyst av några ljus som sitter på ett bord framför dig.");
         Room deadBody = new Room("Du ser en död kropp på golvet.");
         Room torch = new Room("Du ser en brinnande fackla i rummets ena hörn och känner en motbjudande stank.");

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git push:*)",
+      "Bash(git fetch:*)",
+      "Bash(javac:*)",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Lägg till Item-hierarkin med arv och polymorfism\n\n- Item.java: Basklass med name, itemDesc och ItemType enum\n- Key.java: Nyckel för att öppna låsta dörrar\n- Potion.java: Hälsodryck med healing-attribut\n- Treasure.java: Skatt med goldValue\n- Weapon.java: Vapen med increaseDamage\n\nImplementerar polymorfism genom att alla items ärver från Item.\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Jonas <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Uppdatera Item-hierarkin för Del 2\n\n- Item.java: Basklass med name, itemDesc och ItemType enum\n- Key.java: Nyckel för att öppna låsta dörrar\n- Potion.java: Hälsodryck med healing-attribut \\(6 HP\\)\n- Treasure.java: Skatt med goldValue\n- Weapon.java: Vapen med increaseDamage\n\nFixat: /**19 -> /** i Item.java \\(rad 80\\)\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Jonas <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Uppdatera Player och Monster för Del 2\n\nPlayer.java:\n- healthPoints \\(10 HP\\), damage \\(1 bas\\)\n- ArrayList<Item> inventory\n- Metoder: takeDamage\\(\\), heal\\(\\), addItem\\(\\), hasKey\\(\\)\n- getTotalDamage\\(\\) beräknar bas + vapenbonus\n\nMonster.java:\n- name, healthPoints, damage, monsterDesc\n- takeDamage\\(\\), isAlive\\(\\), getAttackText\\(\\)\n\nFixat: Dubbel klassdeklaration i Monster.java\n\nAuthor: William\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Uppdatera Room med monster, items och doBattle\\(\\)\n\n- Lagt till Monster och Item attribut \\(0..1\\)\n- setMonster\\(\\), getMonster\\(\\), removeMonster\\(\\)\n- setItem\\(\\), getItem\\(\\), removeItem\\(\\)\n- hasMonster\\(\\), hasItem\\(\\) hjälpmetoder\n- doNarrative\\(Player\\) visar items och låsta dörrar\n- doBattle\\(Player\\) hanterar strid med monster\n\nFixat: Tagit bort package room; deklaration\n\nAuthor: Arvid\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Spellogik och integration för Del 2\n\nDragonTreasure.java:\n- setupGame\\(\\) skapar monster och items i rummen\n- Odjur \\(8 HP\\) i torch, Drake \\(18 HP\\) i dragonRoom\n- Svärd, Nyckel, Hälsodryck, Skatt placerade\n\nDungeon.java:\n- playGame\\(\\) med nya kommandon: p \\(pickup\\), d \\(drink\\)\n- Combat-flöde med doBattle\\(\\)\n- Nyckel-logik för låsta dörrar\n- Vinst/förlust-villkor\n- ASCII-art för drake och skatt\n\nREADME.md: Uppdaterad dokumentation\nKORRIGERINGAR.md: Dokumentation av bugfixar\n\nAuthor: Johnny\nEOF\n\\)\")",
+      "Bash(git merge:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

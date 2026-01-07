@@ -11,6 +11,7 @@ public class Room {
     private ArrayList<Door> doors; //En arraylist med dörrar som kommer finnas
     private Monster monster; //Monstervariabel
     private Item item; //Itemvariabel
+    private boolean showDoors = true; //Om dörrar ska visas i doNarrative
 
     //Konstruktor för rummen
     public Room(String roomDesc) {
@@ -91,6 +92,11 @@ public class Room {
         return item != null;
     }
 
+    //Setter för att dölja dörrar i doNarrative (används för start-rummet)
+    public void setShowDoors(boolean showDoors){
+        this.showDoors = showDoors;
+    }
+
     //Metod för spelmotorn att anropa när spelaren kommer in i ett nytt rum
     //OBS: ANTAGANDE: Alla dörrar är konstanta, det finns ingen magi e dyl som kan göra att dörrar dyker upp eller försvinner
     public void doNarrative() {
@@ -107,6 +113,11 @@ public class Room {
 
         if (hasItem()){ //Kolla om det finns en item i rummet
             System.out.println("Du ser " + item.getName().toLowerCase() + " på golvet, du kan plocka upp den [p]");
+        }
+
+        // Om showDoors är false, visa inte dörrar (t.ex. start-rummet har redan instruktioner)
+        if (!showDoors) {
+            return;
         }
 
         if (doors.isEmpty()) { //Kontrollfunktion enligt defensive programming
