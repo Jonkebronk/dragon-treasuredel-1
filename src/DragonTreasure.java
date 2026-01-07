@@ -20,7 +20,7 @@ public class DragonTreasure {
     }
 
     /**
-     * Sätter upp spelet: skapar rum, dörrar, kopplingar och spelare.
+     * Sätter upp spelet: skapar rum, dörrar, kopplingar, monster, items och spelare.
      */
     public void setupGame() {
         // Skapa välkomstmeddelande och dungeon
@@ -43,6 +43,7 @@ public class DragonTreasure {
         Room torch = new Room("Du ser en brinnande fackla i rummets ena hörn och känner en motbjudande stank.");
         Room wetRoom = new Room("Du kommer in i ett fuktigt rum med vatten sipprandes längs den västra väggen.");
         Room caveRoom = new Room("Du kommer in i ett rymligt bergrum med en ljusstrimma sipprandes genom en spricka i den östra väggen.");
+        Room dragonRoom = new Room("Du kommer in i en enorm grotta. Luften är het och luktar svavel.");
 
         // Lagra rum i ArrayList enligt uppgiftskrav
         rooms.add(outside);
@@ -51,6 +52,7 @@ public class DragonTreasure {
         rooms.add(torch);
         rooms.add(wetRoom);
         rooms.add(caveRoom);
+        rooms.add(dragonRoom);
 
         // === SKAPA DÖRRAR OCH KOPPLINGAR ===
         // Från outside
@@ -69,14 +71,43 @@ public class DragonTreasure {
         torch.addDoor(new Door('s', false, wetRoom));
         torch.addDoor(new Door('e', false, null)); // null = utgång
 
-        // Från wetRoom (har låst dörr österut)
+        // Från wetRoom (har låst dörr österut till draken)
         wetRoom.addDoor(new Door('n', false, torch));
         wetRoom.addDoor(new Door('w', false, caveRoom));
-        wetRoom.addDoor(new Door('e', true, null)); // Låst dörr till skatten
+        wetRoom.addDoor(new Door('e', true, dragonRoom)); // Låst dörr till draken
 
         // Från caveRoom
         caveRoom.addDoor(new Door('n', false, entrance));
         caveRoom.addDoor(new Door('e', false, wetRoom));
+
+        // Från dragonRoom
+        dragonRoom.addDoor(new Door('w', false, wetRoom));
+
+        // === SKAPA MONSTER ===
+        // Odjur i torch-rummet (8 HP, 1 skada)
+        Monster odjur = new Monster("Odjur", 8, 1, "Ett odjur dyker upp!");
+        torch.setMonster(odjur);
+
+        // Drake i dragonRoom (18 HP, 1 skada)
+        Monster drake = new Monster("Drake", 18, 1, "En arg drake dyker upp!");
+        dragonRoom.setMonster(drake);
+
+        // === SKAPA ITEMS ===
+        // Svärd i deadBody-rummet (+1 extra skada, totalt 2 med bas)
+        Weapon sword = new Weapon("Svärd", "Ett gammalt svärd", 1);
+        deadBody.setItem(sword);
+
+        // Nyckel i caveRoom
+        Key key = new Key("Nyckel", "En rostig nyckel");
+        caveRoom.setItem(key);
+
+        // Hälsodryck i wetRoom (helar 6 HP)
+        Potion potion = new Potion("Hälsodryck", "En röd dryck", 6);
+        wetRoom.setItem(potion);
+
+        // Skatt i dragonRoom
+        Treasure treasure = new Treasure("Skatt", "En gyllene skattkista", 1000);
+        dragonRoom.setItem(treasure);
 
         // Sätt startrum
         dungeon.setCurrentRoom(outside);
