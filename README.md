@@ -23,7 +23,7 @@ java DragonTreasure
 ## Kommandon i spelet
 - `n` - Gå norrut
 - `s` - Gå söderut
-- `ö` - Gå österut
+- `e` - Gå österut
 - `v` - Gå västerut
 - `p` - Plocka upp föremål
 - `d` - Drick hälsodryck
@@ -58,7 +58,7 @@ Följande antaganden har gjorts under utvecklingen:
 
 4. **null representerar utgång** - När en dörrs `nextRoom` är `null` betyder det att dörren leder ut ur grottan.
 
-5. **Svenska kommandon** - Vi använder svenska riktningskommandon (n, s, ö, v).
+5. **Blandade kommandon** - Vi använder n, s, e, v för att undvika problem med svenska tecken i terminalen.
 
 6. **Automatisk strid** - Strider startar automatiskt när spelaren går in i ett rum med ett levande monster.
 

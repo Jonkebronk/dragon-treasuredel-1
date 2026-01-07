@@ -14,7 +14,7 @@ public class Door {
     public enum Direction {
         NORTH('n', "norrut"),
         SOUTH('s', "söderut"),
-        EAST('ö', "österut"),
+        EAST('e', "österut"),
         WEST('v', "västerut");
 
         private final char commandChar;  // Tecken spelaren använder
