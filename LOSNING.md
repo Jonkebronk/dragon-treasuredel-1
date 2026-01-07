@@ -3,7 +3,7 @@
 ## Vinnande väg (komplett genomgång)
 
 ```
-e → n → p → e → (odjur) → s → v → p → e → p → d → e → (drake) → v → n → e
+ö → n → p → ö → (odjur) → s → v → p → ö → p → d → ö → (drake) → v → n → ö
 ```
 
 ## Steg-för-steg guide
@@ -11,7 +11,7 @@ e → n → p → e → (odjur) → s → v → p → e → p → d → e → (d
 ### 1. Starta spelet
 ```
 Du står utanför en grotta...
-> e
+> ö
 ```
 
 ### 2. Gå till döda kroppen och plocka upp svärdet
@@ -27,7 +27,7 @@ Du tog upp svärd.
 
 ### 3. Möt odjuret i fackla-rummet
 ```
-> e
+> ö
 
 Du ser en brinnande fackla...
 Ett odjur dyker upp!
@@ -47,10 +47,10 @@ Du ser nyckel på golvet...
 > p
 Du tog upp nyckel.
 
-> e
+> ö
 Du kommer in i ett fuktigt rum...
 Du ser hälsodryck på golvet...
-Dörren mot east kan nu låsas upp med din nyckel.
+Dörren mot österut kan nu låsas upp med din nyckel.
 > p
 Du tog upp hälsodryck.
 ```
@@ -61,7 +61,7 @@ Du tog upp hälsodryck.
 Du dricker hälsodrycken och återfår 6 hälsopoäng.
 [Nu har du 12 HP]
 
-> e
+> ö
 Du låser upp dörren med nyckeln.
 Du kommer in i en enorm grotta...
 [Drake ASCII-art visas]
@@ -74,7 +74,7 @@ Du besegrar draken och samlar skatten.
 ```
 > v
 > n
-> e
+> ö
 
 [Skatt ASCII-art visas]
 Du lämnar grottan med skatten. Grattis, du vann!
@@ -83,17 +83,17 @@ Du lämnar grottan med skatten. Grattis, du vann!
 ## Karta
 
 ```
-            [DEAD BODY] ---- E ----> [TORCH] =======> EXIT
+            [DEAD BODY] ---- Ö ----> [TORCH] =======> EXIT
             (svärd)                  (odjur)
                  |                       |
                  N                       S
                  |                       |
-[OUTSIDE] --E--> [ENTRANCE]          [WET ROOM] ==E==> [DRAGON ROOM]
+[OUTSIDE] --Ö--> [ENTRANCE]          [WET ROOM] ==Ö==> [DRAGON ROOM]
  (start)         (ljus)              (dryck)    låst    (drake+skatt)
                  |                       |
-                 S                       W
+                 S                       V
                  |                       |
-            [CAVE ROOM] ----- E ---------+
+            [CAVE ROOM] ----- Ö ---------+
             (nyckel)
 ```
 
