@@ -73,7 +73,11 @@ public class Dungeon {
                     player.addItem(treasure);
                     currentRoom.removeItem();
                     System.out.println("Du besegrar draken och samlar skatten.");
+                    System.out.println("Kan du fly denna grotta med alla dina rikedomar?");
                 }
+
+                // Visa vad spelaren kan göra efter striden
+                showExits();
             }
 
             // Visa tips om hälsodryck om spelaren har låg hälsa och har en potion
@@ -211,5 +215,29 @@ public class Dungeon {
             "                                              .'  b .~~\n"+
             "                                              :bb ,' \n"+
             "                                              ~~~~\n");
+    }
+
+    /**
+     * Visar utgångar från nuvarande rum efter strid
+     */
+    private void showExits() {
+        System.out.print("Du kan gå ");
+        java.util.ArrayList<Door> doors = currentRoom.getDoors();
+        java.util.ArrayList<String> directions = new java.util.ArrayList<>();
+
+        for (Door door : doors) {
+            directions.add(door.getDirectionName() + " [" + door.getCommandChar() + "]");
+        }
+
+        for (int i = 0; i < directions.size(); i++) {
+            if (i == directions.size() - 1 && directions.size() > 1) {
+                System.out.print(" eller " + directions.get(i));
+            } else if (i > 0) {
+                System.out.print(", " + directions.get(i));
+            } else {
+                System.out.print(directions.get(i));
+            }
+        }
+        System.out.println();
     }
 }
