@@ -100,6 +100,11 @@ public class Room {
     public void doNarrative(Player player) {
         System.out.println(roomDesc); //Först skrivs beskrivningen av rummet ut
 
+        // Om det finns ett monster, visa bara rumsbeskrivningen - monstret attackerar direkt
+        if (hasMonster()) {
+            return;
+        }
+
         if (hasItem()){ //Kolla om det finns en item i rummet
             System.out.println("Du ser " + item.getName().toLowerCase() + " på golvet, du kan plocka upp den [p]");
         }
