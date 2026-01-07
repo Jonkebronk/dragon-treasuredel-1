@@ -12,10 +12,10 @@ public class Door {
      * och ett engelskt namn (north, south, east, west).
      */
     public enum Direction {
-        NORTH('n', "north"),
-        SOUTH('s', "south"),
-        EAST('e', "east"),
-        WEST('w', "west");
+        NORTH('n', "norrut"),
+        SOUTH('s', "söderut"),
+        EAST('e', "österut"),
+        WEST('w', "västerut");
 
         private final char commandChar;  // Tecken spelaren använder
         private final String name;       // Svenskt namn på riktningen
